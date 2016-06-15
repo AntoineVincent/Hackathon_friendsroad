@@ -1,0 +1,3 @@
+road_homepage:
+    path:     /
+    defaults: { _controller: RoadBundle:Default:index }

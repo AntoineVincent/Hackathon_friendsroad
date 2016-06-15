@@ -1,0 +1,4 @@
+services:
+#    apirest.example:
+#        class: ApirestBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
