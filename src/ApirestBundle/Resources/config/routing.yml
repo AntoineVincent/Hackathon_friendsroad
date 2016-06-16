@@ -2,6 +2,16 @@ homepage:
     path:     /public/.{_format}
     defaults: { _controller: public:index }
 
+login:
+    pattern:   /login
+    defaults:  { _controller: RoadBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+
 get_groupe:
     path:    /dashboard/get/{idgroupe}.{_format}
     defaults: { _controller: "RoadBundle:Default:dashboard" }
