@@ -1,6 +1,6 @@
 homepage:
-    path:     /public/.{_format}
-    defaults: { _controller: public:index }
+    path:     /
+    defaults: { _controller: "RoadBundle:Default:index" }
 
 login:
     pattern:   /login

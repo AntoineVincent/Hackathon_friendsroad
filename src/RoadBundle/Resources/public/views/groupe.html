@@ -1,0 +1,137 @@
+<div class="parallax-container">
+  <div class="parallax"><img src="bundles/road/assets/parallax1.jpeg"></div>
+</div>
+
+<div class="section white">
+  <div class="row container">
+
+    <h2 class="header">{{groupe}}</h2>
+    <div class="row">
+
+      <div class="col s6"> <!-- =================== COLLAPSE MEMBRES DU GROUPE =================== -->
+        <ul class="collapsible" data-collapsible="accordion">
+          <li class="padding">
+            <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Membres du groupe</div>
+            <div class="collapsible-body padding">
+                <div class="row">
+                  <form class="col s7">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="col s4 offset-s1 addButton">
+                    <a class="waves-effect waves-light col s12 btn"><i class="medium material-icons right">add</i>Ajouter </a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="chip">
+                    <img src="bundles/road/assets/moi.jpg" alt="Contact Person">
+                    Jerem
+                  </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div> <!-- =================== END COLLAPSE MEMBRES DU GROUPE =================== -->
+
+      <div class="col s6"> <!-- =================== COLLAPSE BUDGET =================== -->
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Budget</div>
+            <div class="collapsible-body padding">
+                <div class="row">
+                  <div class="collection">
+                    <a class="collection-item">Alvin</a>
+                    <a class="collection-item">Alvin</a>
+                    <a class="collection-item">Alvin</a>
+                    <a class="collection-item active">Alvin</a>
+                  </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div>  <!-- =================== END COLLAPSE BUDGET =================== -->
+
+      <div class="col s12"> <!-- =================== COLLAPSE ITINERAIRE =================== -->
+
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Itinéraire</div>
+                <div class="collapsible-body padding">
+                    <div class="row">
+                      <div class="col s6">
+                        <div class="collection">
+                          <a class="collection-item">Alvin</a>
+                          <a class="collection-item">Alvin</a>
+                          <a class="collection-item">Alvin</a>
+                          <a class="collection-item active">Alvin</a>
+                        </div>
+                      </div>
+                      <div class="col s6">
+                        <ng-map default-style="false" center="{{centerMap}}" zoom="8">
+                          <marker position="{{deal.shop.point.coordinates}}" id="{{deal.shop.name}}" title="{{deal.shop.name}}" on-click="showDetail('marker-info')"></marker>
+                        </ng-map>
+                      </div>
+
+                    </div>
+                </div>
+              </li>
+            </ul>
+
+      </div>  <!-- =================== END COLLAPSE ITINERAIRE =================== -->
+
+      <div class="col s12"> <!-- =================== COLLAPSE PROPOSITIONS =================== -->
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Propositions</div>
+            <div class="collapsible-body padding">
+              <table class="striped centered">
+               <thead>
+                 <tr>
+                     <th data-field="id">Propositions</th>
+                     <th data-field="id">Prix</th>
+                     <th data-field="name">Vote</th>
+                     <th data-field="price">Validation</th>
+                 </tr>
+               </thead>
+
+               <tbody>
+                 <tr>
+                   <td>Alvin</td>
+                   <td>50 <i class="fa fa-eur" aria-hidden="true"></i></td>
+                   <td>2</td>
+                   <td><i class="small material-icons close">close</i></td>
+                 </tr>
+                 <tr>
+                   <td>Alan</td>
+                   <td>75 <i class="fa fa-eur" aria-hidden="true"></i></td>
+                   <td>4</td>
+                   <td><i class="small material-icons done">done</i></td>
+                 </tr>
+                 <tr>
+                   <td>Jonathan</td>
+                   <td>33 <i class="fa fa-eur" aria-hidden="true"></i></td>
+                   <td>3</td>
+                   <td><i class="small material-icons done">done</i></td>
+                 </tr>
+               </tbody>
+             </table>
+            </div>
+          </li>
+        </ul>
+      </div>  <!-- =================== END COLLAPSE PROPOSITIONS =================== -->
+
+    </div>
+
+
+
+  </div>
+</div>
+
+<div class="parallax-container">
+  <div class="parallax"><img src="bundles/road/assets/road.jpg"></div>
+</div>
