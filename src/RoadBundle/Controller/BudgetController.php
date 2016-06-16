@@ -18,15 +18,7 @@ use FOS\RestBundle\View\View;
 
 class BudgetController extends Controller
 {
-    public function getBudgetAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $budget = $em->getRepository('RoadBundle:Budget')->findOneByIDgroupe($id);
-
-        return array('budget' => '$budget');
-
-    }
-    public function newBudgetAction(Request $request, $id)
+    public function newBudgetAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
         $budget = new Budget();
@@ -37,7 +29,7 @@ class BudgetController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $budget->setIdgroupe($id);
+            $budget->setIdgroupe($idgroupe);
             $em->persist($budget);
             $em->flush();
 
@@ -46,7 +38,32 @@ class BudgetController extends Controller
         }
         return View::create($form, 400);
     }
-    public function userBudgetAction(Request $request, $idmembre)
+
+    public function algoBudgetAction(Request $request, $idmembre)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository("RoadBundle:Membre")->findOneByIdmembre($idmembre);
+        $budUsers = $em->getRepository("RoadBundle:Budget")->findbyIdmembre($idmembre);
+        $budget = $em->getRepository("RoadBundle:Budget")->findOneByIdgroupe($user->getIdgroupe());
+
+        $count = 0;
+        foreach ($budUsers as $budUser){
+            $totalUser = $budUser->getTotal();
+            $count += $totalUser;
+        }
+
+        $totalbudget = $budget->getTotal();
+
+        $effvalue = $totalbudget - $count;
+
+        return array('budget' => $budget,
+            'effvalue' => $effvalue,
+            'budUsers' => $budUsers,
+        );
+
+    }
+    
+    public function newuserBudgetAction(Request $request, $idmembre)
     {
         $em = $this->getDoctrine()->getManager();
         $budget = new Budget();
@@ -66,38 +83,5 @@ class BudgetController extends Controller
         }
         return View::create($form, 400);
     }
-    public function updateBudgetAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $budget = $em->getRepository('RoadBundle:Budget')->findOneByIdgroupe($id);
-
-        $editForm = $this->createForm('RoadBundle\Form\BudgetType', $budget);
-
-        $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
-
-        $editForm->bind($jsonData);
-        if ($budget) {
-            if ($editForm->isValid()) {
-
-                $em->persist($budget);
-                $em->flush();
-
-                return array('budget' => $budget);
-            } else {
-                return View::create($editForm, 400);
-            }
-        } else {
-            throw $this->createNotFoundException('Budget not found!');
-        }
-    }
-    public function deleteBudgetAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $budget = $em->getRepository('RoadBundle:budget')->findOneByIdgroupe($id);
-        
-        $em->remove($budget);
-        $em->flush();
-    }
-
 }
 
