@@ -72,5 +72,5 @@ class DefaultController extends Controller
         $em->remove($itineraire);
         $em->flush();
     }
-    
+
 }

@@ -1,0 +1,39 @@
+
+
+<div class="row">
+  <div class="col s5">
+    <div class="card login padding">
+        <h3 class="center-align titre">Connexion</h3>
+        <div class="row">
+          <form name="formConnect">
+
+              <div class="input-field form">
+                <input id="email" type="email" ng-model="user.email" ng-required="true">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field form">
+                <input id="password" type="password" ng-model="user.password" ng-required="true">
+                <label for="password">Mot de passe</label>
+              </div>
+            <button type="submit" class="btn col s6 offset-s6" ng-disabled="formConnect.$invalid"
+             ng-click="connect()">Go<i class="material-icons right">done</i></button>
+          </form>
+        </div>
+
+        <div class="row create">
+            <div class="col s6">
+              <a href="#/signup" class="linkLogin">Créer un groupe</a>
+            </div>
+            <div class="col s6">
+              <a href="" class="linkLogin right">Mot de passe oublié ?</a>
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="col s6 offset-s1 logoIndex">
+      <h1 class="titre">Friends Road</h1>
+  </div>
+
+</div>
