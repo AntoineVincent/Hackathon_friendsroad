@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Groupe
 {
+
     /**
      * @var int
      *
@@ -34,6 +35,20 @@ class Groupe
      * @ORM\Column(name="password", type="string", length=30, nullable=true)
      */
     private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=50, nullable=true)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50, nullable=true)
+     */
+    private $email;
 
 
     /**
@@ -85,10 +100,56 @@ class Groupe
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Groupe
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Groupe
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

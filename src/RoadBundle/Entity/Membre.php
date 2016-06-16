@@ -3,6 +3,7 @@
 namespace RoadBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Membre
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="membre")
  * @ORM\Entity(repositoryClass="RoadBundle\Repository\MembreRepository")
  */
-class Membre
+class Membre implements UserInterface
 {
     /**
      * @var int
@@ -31,9 +32,16 @@ class Membre
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=50, nullable=true)
+     * @ORM\Column(name="username", type="string", length=50, nullable=true)
      */
-    private $nom;
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50, nullable=true)
+     */
+    private $password;
 
     /**
      * @var int
@@ -42,6 +50,15 @@ class Membre
      */
     private $idgroupe;
 
+    /**
+     * @ORM\Column(name="salt", type="string", length=255)
+     */
+    private $salt;
+
+    /**
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles = array();
 
     /**
      * Get id
@@ -77,26 +94,49 @@ class Membre
     }
 
     /**
-     * Set nom
+     * Set username
      *
-     * @param string $nom
+     * @param string $username
      * @return Membre
      */
-    public function setNom($nom)
+    public function setUsername($username)
     {
-        $this->nom = $nom;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get username
      *
-     * @return string 
+     * @return string
      */
-    public function getNom()
+    public function getUsername()
     {
-        return $this->nom;
+        return $this->username;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return Membre
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     /**
@@ -120,5 +160,55 @@ class Membre
     public function getIdgroupe()
     {
         return $this->idgroupe;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     * @return Membre
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     * @return Membre
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return array
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    public function eraseCredentials()
+    {
     }
 }

@@ -1,0 +1,59 @@
+
+
+<div class="row">
+  <div class="col s6 logoIndex">
+      <h1 class="titre center-align">Friends Road</h1>
+  </div>
+  <div class="col s5">
+    <div class="card login padding">
+      <div ng-show="nextStep == 1"> <!-- ======================= ETAPE 1 ============================== -->
+        <h3 class="center-align titre">Groupes</h3>
+        <div class="row">
+          <form name="formGroup">
+
+              <div class="input-field form">
+                <input id="groupe" type="text" ng-model="groupe.name" ng-required="true">
+                <label for="groupe">Nom du groupe</label>
+              </div>
+              <div class="input-field form">
+                <input id="email" type="email" ng-model="groupe.email" ng-required="true">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field form">
+                <input id="password" type="password" ng-model="groupe.password" ng-required="true">
+                <label for="password">Mot de passe</label>
+              </div>
+              <div class="input-field form">
+                <input id="repeatpassword" type="password" ng-model="groupe.repeatpassword" ng-required="true">
+                <label for="repeatpassword">Répéter mot de passe</label>
+              </div>
+            <button class="btn col s6 offset-s6" ng-disabled="formGroup.$invalid"
+             ng-click="suivant()">Suivant<i class="material-icons right">trending_flat</i></button>
+          </form>
+        </div>
+
+      </div> <!-- ======================= FIN ETAPE 1 ============================== -->
+
+      <div ng-show="nextStep == 2"> <!-- ======================= ETAPE 2 ============================== -->
+        <h3 class="center-align titre">Utilisateurs <a class="btn-floating btn-small waves-effect waves-light red" ng-click="add()"><i class="material-icons">add</i></a></h3>
+        <div class="row">
+
+          <form name="formUtilisateurs">
+
+              <div ng-repeat="utilisateur in utilisateurs">
+                <div class="input-field">
+                  <input id="utilisateur{{$index}}" type="text" ng-model='data[ utilisateur ]' ng-required="true">
+                  <label for="utilisateur{{$index}}">Utilisateur email</label>
+                </div>
+              </div>
+            <button type="submit" ng-show="nextStep == 1" class="btn col s6 offset-s6" ng-disabled="formUtilisateurs.$invalid"
+             ng-click="suivant()">Suivant<i class="material-icons right">trending_flat</i></button>
+            <button type="submit" ng-show="nextStep == 2" class="btn col s6 offset-s6" ng-disabled="formUtilisateurs.$invalid"
+             ng-click="valider()">valider<i class="material-icons right">done</i></button>
+          </form>
+      </div> <!-- ======================= FIN ETAPE 2 ============================== -->
+    </div>
+    </div>
+  </div>
+
+</div>

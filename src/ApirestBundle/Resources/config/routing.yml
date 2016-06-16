@@ -1,0 +1,58 @@
+homepage:
+    path:     /
+    defaults: { _controller: "RoadBundle:Default:index" }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: RoadBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+
+get_groupe:
+    path:    /dashboard/get/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Default:dashboard" }
+    methods:  GET
+
+delete_groupe:
+    path:    /dashboard/delete/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Default:deleteGroupe" }
+    methods:  DELETE
+
+create_budget:
+    path:    /budget/create/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Budget:newBudget" }
+    methods:  POST
+
+create_user_budget:
+    path:    /budget/user/create/{idmembre}.{_format}
+    defaults: { _controller: "RoadBundle:Budget:newuserBudget" }
+    methods:  POST
+
+algo_budget:
+    path:    /budget/algo/{idmembre}.{_format}
+    defaults: { _controller: "RoadBundle:Budget:algoBudget" }
+    methods:  GET
+
+create_groupe:
+    path:    /groupe/create.{_format}
+    defaults: { _controller: "RoadBundle:Groupe:newgroupe" }
+    methods:  POST
+
+create_itineraire:
+    path:    /itineraire/create/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Itineraire:newItineraire" }
+    methods:  POST
+
+create_membre:
+    path:    /membre/create/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:newMembre" }
+    methods:  POST
+
+edit_membre:
+    path:    /membre/edit/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:editMembre" }
+    methods:  PUT
