@@ -1,1 +1,64 @@
-ezkhqgfj
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="" />
+    <title>Friends Road</title>
+
+    <!-- CSS -->
+    <!-- Compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset ('bundles/road/css/style.css') }}">
+
+    <!-- AngularJS -->
+    <script src="{{ asset ('bundles/road/js/libs/angular.min.js') }}"></script>
+    <script src="{{ asset ('bundles/road/js/libs/angular-route.min.js') }}"></script>
+    <script src="{{ asset ('bundles/road/js/libs/ng-map.min.js') }}"></script>
+
+    <script src="{{ asset ('bundles/road/js/controllers/connectController.js') }}"></script>
+    <script src="{{ asset ('bundles/road/js/controllers/groupeController.js') }}"></script>
+    <script src="{{ asset ('bundles/road/js/controllers/signupController.js') }}"></script>
+    <script src="{{ asset ('bundles/road/js/services/connectService.js') }}"></script>
+    <script src="{{ asset ('bundles/road/js/services/userService.js') }}"></script>
+
+    <script src="{{ asset ('bundles/road/js/app.js') }}"></script>
+
+    <!-- google api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOq8Pa8bDZCg5wbgRmcqkoP8JibZt5j1M"></script>
+
+
+    </head>
+    <body>
+    <header>
+
+     <div class="navbar-fixed" ng-show="connect">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#/" class="brand-logo"><h4 class="titre logoNav">Friends Road</h4></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    </header>
+
+        <ng-view></ng-view>
+
+</body>
+</html>

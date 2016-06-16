@@ -1,15 +1,15 @@
 function config($routeProvider, $httpProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/connect.html',
+            templateUrl: 'http://localhost/Hackathon_friendsroad/web/bundles/road/views/connect.html',
             controller: 'connectController'
         })
         .when('/signup', {
-            templateUrl: 'views/signup.html',
+            templateUrl: 'http://localhost/Hackathon_friendsroad/web/bundles/road/views/signup.html',
             controller: 'signupController'
         })
         .when('/groupe', {
-            templateUrl: 'views/groupe.html',
+            templateUrl: 'http://localhost/Hackathon_friendsroad/web/bundles/road/views/groupe.html',
             controller: 'groupeController'
         })
         .otherwise({

@@ -1,5 +1,5 @@
 function groupeController($scope, $location, $timeout, userService, $location, $rootScope) {
-  $('body').css({'background':'url("./assets/parallax1.jpg") cover'})
+  $('body').css({'background':'url("../assets/parallax1.jpg") cover'})
   $rootScope.connect = true;
   $scope.groupe = 'Nom du Groupe';
   //================== INIT PARALLAX ============

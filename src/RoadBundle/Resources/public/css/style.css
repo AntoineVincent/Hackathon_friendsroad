@@ -1,5 +1,5 @@
 body{
-    background: url('/assets/bg-accueil.jpg') fixed;
+    background: url('../assets/bg-accueil.jpg') fixed;
     background-size: cover;
 }
 .padding {
