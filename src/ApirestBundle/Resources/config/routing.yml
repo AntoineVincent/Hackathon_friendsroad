@@ -1,6 +1,6 @@
 homepage:
     path:     /public/.{_format}
-    defaults: { _controller: public:index.html }
+    defaults: { _controller: public:index }
 
 get_groupe:
     path:    /dashboard/get/{idgroupe}.{_format}
