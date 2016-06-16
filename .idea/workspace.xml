@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d07eebfa-8ca9-4cd4-a03f-abae82d83684" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/default/test.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/ItineraireController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Form/BudgetType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Form/GroupeType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Form/ItineraireType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Form/MembreType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php" afterPath="$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php" />
     </list>
     <ignored path="friendsroad.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,46 +27,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BudgetController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php">
+      <file leaf-file-name="Groupe.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-              <folding>
-                <element signature="e#42#101#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BudgetType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/BudgetType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="45" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="45" />
+            <state relative-caret-position="2664">
+              <caret line="148" column="21" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupeController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GroupeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="126">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#42#92#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -93,7 +63,6 @@
         <option value="$PROJECT_DIR$/src/RoadBundle/Controller/RoadController.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Form/MembreType.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Form/ItineraireType.php" />
-        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
         <option value="$PROJECT_DIR$/src/ApirestBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Form/GroupeType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/test;html.twig" />
@@ -103,8 +72,10 @@
         <option value="$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Controller/ItineraireController.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Form/BudgetType.php" />
-        <option value="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php" />
+        <option value="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php" />
       </list>
     </option>
   </component>
@@ -221,6 +192,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsroad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsroad" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RoadBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,12 +378,12 @@
       <workItem from="1466026116197" duration="151000" />
       <workItem from="1466026365398" duration="1683000" />
       <workItem from="1466029628529" duration="1130000" />
-      <workItem from="1466030875663" duration="25777000" />
+      <workItem from="1466030875663" duration="28982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33354000" />
+    <option name="totallyTimeSpent" value="36559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -663,22 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/ItineraireType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/AbstractType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -700,24 +677,6 @@
         <state relative-caret-position="108">
           <caret line="6" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/GroupeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#35#75#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,14 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/MembreType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/ItineraireController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -803,26 +754,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/BudgetType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="144">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
-            <element signature="e#42#92#0#PHP" expanded="true" />
+            <element signature="e#35#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php">
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/ItineraireType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        <state relative-caret-position="420">
+          <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/GroupeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#35#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Form/MembreType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
           <folding>
             <element signature="e#42#101#0#PHP" expanded="true" />
           </folding>
@@ -831,9 +800,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+        <state relative-caret-position="510">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="68" column="5" selection-start-line="45" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="e#42#101#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2664">
+          <caret line="148" column="21" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#92#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -32,3 +32,18 @@ budget_delete:
     path:     /budget/delete/{id}.{_format}
     defaults: { _controller: "RoadBundle:Budget:deletebudget" }
     methods:  DELETE
+
+get_membre:
+    path:    /membre/get/{id}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:getMembre" }
+    methods:  GET
+
+membre_new:
+    path:     /membre/new/{id}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:newmembre" }
+    methods:  POST
+
+membre_update:
+    path:     /membre/update/{id}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:updatemembre" }
+    methods:  PUT
