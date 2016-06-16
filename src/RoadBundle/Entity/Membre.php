@@ -36,6 +36,13 @@ class Membre
     private $nom;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50, nullable=true)
+     */
+    private $password;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="idgroupe", type="integer", nullable=true)
@@ -92,11 +99,34 @@ class Membre
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return Membre
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     /**

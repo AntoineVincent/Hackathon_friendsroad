@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d07eebfa-8ca9-4cd4-a03f-abae82d83684" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php" afterPath="$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" afterPath="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadBundle/Entity/Budget.php" afterPath="$PROJECT_DIR$/src/RoadBundle/Entity/Budget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadBundle/Entity/Membre.php" afterPath="$PROJECT_DIR$/src/RoadBundle/Entity/Membre.php" />
     </list>
     <ignored path="friendsroad.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,6 +27,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BudgetController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Groupe.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,14 +47,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupeController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GroupeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="-144">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#42#92#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Membre.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Membre.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="135" column="21" selection-start-line="135" selection-start-column="21" selection-end-line="135" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MembreController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+              <folding>
+                <element signature="e#42#101#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Budget.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Budget.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,10 +114,13 @@
         <option value="$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Controller/ItineraireController.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Form/BudgetType.php" />
-        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php" />
         <option value="$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
         <option value="$PROJECT_DIR$/src/RoadBundle/Entity/Groupe.php" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Entity/Membre.php" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Entity/Budget.php" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/UserController.module" />
+        <option value="$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php" />
       </list>
     </option>
   </component>
@@ -88,6 +133,9 @@
     <servers>
       <server host="localhost" id="58b1b96b-f312-4312-a7e0-10c21db71708" name="localhost" />
     </servers>
+  </component>
+  <component name="PhpTemplates">
+    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="module" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -378,12 +426,12 @@
       <workItem from="1466026116197" duration="151000" />
       <workItem from="1466026365398" duration="1683000" />
       <workItem from="1466029628529" duration="1130000" />
-      <workItem from="1466030875663" duration="28982000" />
+      <workItem from="1466030875663" duration="30919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36559000" />
+    <option name="totallyTimeSpent" value="38496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -445,27 +493,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ApirestBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApirestBundle/ApirestBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApirestBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -788,31 +815,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="e#42#101#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ApirestBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="68" column="5" selection-start-line="45" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
-          <folding>
-            <element signature="e#42#101#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,13 +831,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Membre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="135" column="21" selection-start-line="135" selection-start-column="21" selection-end-line="135" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/GroupeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="-144">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#42#92#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/MembreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding>
+            <element signature="e#42#101#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Entity/Budget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/UserController.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadBundle/Controller/BudgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

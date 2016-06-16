@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RoadBundle\Form\BudgetType;
 use RoadBundle\Entity\Budget;
+use RoadBundle\Form\MembreType;
+use RoadBundle\Entity\Membre;
+use RoadBundle\Entity\Groupe;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\FOSRestController;
@@ -40,6 +43,26 @@ class BudgetController extends Controller
 
             return array('budget' => $budget);
             
+        }
+        return View::create($form, 400);
+    }
+    public function userBudgetAction(Request $request, $idmembre)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $budget = new Budget();
+        $form = $this->createForm('RoadBundle\Form\BudgetType', $budget);
+        $form->handleRequest($request);
+        $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
+        $form->bind($jsonData);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $budget->setIduser($idmembre);
+            $em->persist($budget);
+            $em->flush();
+
+            return array('budget' => $budget);
+
         }
         return View::create($form, 400);
     }

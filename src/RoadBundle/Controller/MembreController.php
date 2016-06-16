@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RoadBundle\Form\MembreType;
 use RoadBundle\Entity\Membre;
+use RoadBundle\Entity\Groupe;
+use RoadBundle\Form\GroupeType;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\FOSRestController;
@@ -35,7 +37,11 @@ class MembreController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $membre->setIdgroupe($id);
+
+            $add = $em->getRepository('RoadBundle:Groupe')->findOneById($id);
+            $membre = $em->setIdgroupe($add->getId());
+            $membre = $em->setPassword($add->getPassword());
+            
             $em->persist($membre);
             $em->flush();
 
@@ -56,7 +62,11 @@ class MembreController extends Controller
         $editForm->bind($jsonData);
         if ($membre) {
             if ($editForm->isValid()) {
-                $membre->setIdgroupe($id);
+                
+                $add = $em->getRepository('RoadBundle:Groupe')->findOneById($id);
+                $membre = $em ->setIdgroupe($add->getId());
+                $membre = $em ->setPassword($add->getPassword());
+                
                 $em->persist($membre);
                 $em->flush();
 

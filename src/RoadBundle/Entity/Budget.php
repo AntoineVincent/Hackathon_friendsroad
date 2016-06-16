@@ -27,6 +27,14 @@ class Budget
      * @ORM\Column(name="essence", type="integer", nullable=true)
      */
     private $essence;
+    
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="user", type="integer", nullable=true)
+     */
+    private $user;
 
     /**
      * @var int
@@ -79,6 +87,8 @@ class Budget
 
         return $this;
     }
+    
+    
 
     /**
      * Get essence
@@ -88,6 +98,29 @@ class Budget
     public function getEssence()
     {
         return $this->essence;
+    }
+
+    /**
+     * Set user
+     *
+     * @param integer $user
+     * @return Budget
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return integer
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
     /**
