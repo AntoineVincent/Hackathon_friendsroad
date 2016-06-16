@@ -11,7 +11,7 @@ security:
         main:
             entity:
                 class:    RoadBundle\Entity\Membre
-                property: username
+                property: email
 
     firewalls:
         dev:

@@ -56,9 +56,9 @@ class Membre implements UserInterface
     private $salt;
 
     /**
-     * @ORM\Column(name="roles", type="array")
+     * @ORM\Column(name="roles", type="string")
      */
-    private $roles = array();
+    private $roles = string;
 
     /**
      * Get id
@@ -188,7 +188,7 @@ class Membre implements UserInterface
     /**
      * Set roles
      *
-     * @param array $roles
+     * @param string $roles
      * @return Membre
      */
     public function setRoles($roles)
@@ -201,7 +201,7 @@ class Membre implements UserInterface
     /**
      * Get roles
      *
-     * @return array
+     * @return string
      */
     public function getRoles()
     {
