@@ -1,49 +1,48 @@
+homepage:
+    path:     /public/.{_format}
+    defaults: { _controller: public:index.html }
+
 get_groupe:
-    path:    /groupe/get.{_format}
-    defaults: { _controller: "RoadBundle:Groupe:getGroupe" }
+    path:    /dashboard/get/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Default:dashboard" }
     methods:  GET
 
-groupe_new:
-    path:     /groupe/new.{_format}
+delete_groupe:
+    path:    /dashboard/delete/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Default:deleteGroupe" }
+    methods:  DELETE
+
+create_budget:
+    path:    /budget/create/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Budget:newBudget" }
+    methods:  POST
+
+create_user_budget:
+    path:    /budget/user/create/{idmembre}.{_format}
+    defaults: { _controller: "RoadBundle:Budget:newuserBudget" }
+    methods:  POST
+
+algo_budget:
+    path:    /budget/algo/{idmembre}.{_format}
+    defaults: { _controller: "RoadBundle:Budget:algoBudget" }
+    methods:  GET
+
+create_groupe:
+    path:    /groupe/create.{_format}
     defaults: { _controller: "RoadBundle:Groupe:newgroupe" }
     methods:  POST
 
-groupe_delete:
-    path:     /groupe/delete/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Groupe:deleteGroupe" }
-    methods:  DELETE
-
-get_budget:
-    path:    /budget/get/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Budget:getBudget" }
-    methods:  GET
-
-budget_new:
-    path:     /budget/new/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Budget:newbudget" }
+create_itineraire:
+    path:    /itineraire/create/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Itineraire:newItineraire" }
     methods:  POST
 
-budget_update:
-    path:     /budget/update/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Budget:updatebudget" }
-    methods:  PUT
-
-budget_delete:
-    path:     /budget/delete/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Budget:deletebudget" }
-    methods:  DELETE
-
-get_membre:
-    path:    /membre/get/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Membre:getMembre" }
-    methods:  GET
-
-membre_new:
-    path:     /membre/new/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Membre:newmembre" }
+create_membre:
+    path:    /membre/create/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:newMembre" }
     methods:  POST
 
-membre_update:
-    path:     /membre/update/{id}.{_format}
-    defaults: { _controller: "RoadBundle:Membre:updatemembre" }
+edit_membre:
+    path:    /membre/edit/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:editMembre" }
     methods:  PUT

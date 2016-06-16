@@ -18,15 +18,7 @@ use FOS\RestBundle\View\View;
 
 class MembreController extends Controller
 {
-    public function getMembreAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $membre = $em->getRepository('RoadBundle:Membre')->findOneByIDgroupe($id);
-
-        return array('membre' => '$membre');
-    }
-
-    public function newMembreAction(Request $request, $id)
+    public function newMembreAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
         $membre = new Membre();
@@ -38,7 +30,7 @@ class MembreController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            $add = $em->getRepository('RoadBundle:Groupe')->findOneById($id);
+            $add = $em->getRepository('RoadBundle:Groupe')->findOneById($idgroupe);
             $membre = $em->setIdgroupe($add->getId());
             $membre = $em->setPassword($add->getPassword());
             
@@ -50,10 +42,10 @@ class MembreController extends Controller
         }
         return View::create($form, 400);
     }
-    public function updateBudgetAction(Request $request, $id)
+    public function editMembreAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
-        $membre = $em->getRepository('RoadBundle:Membre')->findOneByIdgroupe($id);
+        $membre = $em->getRepository('RoadBundle:Membre')->findOneByIdgroupe($idgroupe);
 
         $editForm = $this->createForm('RoadBundle\Form\MembreType', $membre);
 
@@ -62,11 +54,7 @@ class MembreController extends Controller
         $editForm->bind($jsonData);
         if ($membre) {
             if ($editForm->isValid()) {
-                
-                $add = $em->getRepository('RoadBundle:Groupe')->findOneById($id);
-                $membre = $em ->setIdgroupe($add->getId());
-                $membre = $em ->setPassword($add->getPassword());
-                
+
                 $em->persist($membre);
                 $em->flush();
 
@@ -78,4 +66,5 @@ class MembreController extends Controller
             throw $this->createNotFoundException('Membre not found!');
         }
     }
+
 }

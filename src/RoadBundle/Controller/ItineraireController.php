@@ -1,7 +1,9 @@
 <?php
 
 
-namespace RythmBundle\Controller;
+
+namespace RoadBundle\Controller;
+
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,21 +17,25 @@ use FOS\RestBundle\View\View;
 
 class ItineraireController extends Controller
 {
-    public function indexAction(Request $request)
+    public function newItineraireAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
-    }
-    public function autreAction(Request $request)
-    {
+        $itineraire = new Itineraire();
+        $form = $this->createForm('RoadBundle\Form\ItineraireType', $itineraire);
+        $form->handleRequest($request);
+        $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
+        $form->bind($jsonData);
 
-    }
-    public function newAction(Request $request)
-    {
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $itineraire->setIdgroupe($idgroupe);
+            $em->persist($itineraire);
+            $em->flush();
 
-    }
-    public function againAction(Request $request)
-    {
+            return array('itineraire' => $itineraire);
 
+        }
+        return View::create($form, 400);
     }
 }
 

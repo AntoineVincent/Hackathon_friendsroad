@@ -37,25 +37,5 @@ class GroupeController extends FOSRestController
 
         return View::create($form, 400);
     }
-    
-    public function deleteGroupeAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $groupe = $em->getRepository('RoadBundle:Groupe')->find($id);
-        $membre = $em->getRepository('RoadBundle:Membre')->findByIdgroupe($id);
-
-        $em->remove($groupe, $membre);
-        $em->flush();
-    }
-    public function getGroupeAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $groupes = $em->getRepository('RoadBundle:Groupe')->findAll();
-        $membres = $em->getRepository('RoadBundle:Membre')->findAll();
-        
-        $tab = array ($groupes, $membres);
-            
-        return array('tab' => $tab);
-    }
 }
 
