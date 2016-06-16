@@ -17,6 +17,11 @@ use FOS\RestBundle\View\View;
 
 class DefaultController extends Controller
 {
+    public function indexAction(Request $request)
+    {
+        return $this->render('RoadBundle:Default:index.html.twig');
+    }
+
     public function dashboardAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
