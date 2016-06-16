@@ -9,3 +9,7 @@ apirest:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+test:
+    path:     /new
+    defaults: { _controller: "RoadBundle:Groupe:test" }
