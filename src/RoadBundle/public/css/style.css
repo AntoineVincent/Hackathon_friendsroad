@@ -1,0 +1,52 @@
+body{
+    background: url('/assets/bg-accueil.jpg') fixed;
+    background-size: cover;
+}
+.padding {
+  padding: 3%;
+}
+.login {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.logoIndex{
+  margin-top: 17%;
+}
+.logoIndex, h1{
+  font-size: 100px;
+}
+.logoNav{
+  margin-left: 10%;
+}
+.titre{
+  font-family: 'Yesteryear', Pacifico, cursive;
+  color: white;
+}
+.form input[type=email],input[type=password],input[type=text] {
+  border-bottom: 1px solid white;
+  color: black;
+}
+.form label {
+  color: white;
+}
+.create{
+  margin-top: 5%;
+}
+.linkLogin{
+  color: white;
+}
+.nav-Top{
+  position: fixed;
+  margin: 0;
+}
+.addButton{
+  margin-top: 2%;
+}
+.close{
+  color: red;
+}
+.done{
+  color: green;
+}

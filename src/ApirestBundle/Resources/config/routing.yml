@@ -1,6 +1,6 @@
 homepage:
-    path:     /public/.{_format}
-    defaults: { _controller: public:index.html }
+    path:     /
+    defaults: { _controller: "RoadBundle:Default:index" }
 
 get_groupe:
     path:    /dashboard/get/{idgroupe}.{_format}
