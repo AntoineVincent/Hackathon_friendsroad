@@ -22,6 +22,7 @@ class GroupeController extends FOSRestController
         
         $groupe = new Groupe();
         $form = $this->createForm('RoadBundle\Form\GroupeType', $groupe);
+        $form->handleRequest($request);
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $form->bind($jsonData);
 

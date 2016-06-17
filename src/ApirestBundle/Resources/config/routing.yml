@@ -13,7 +13,7 @@ logout:
     pattern:   /logout
 
 get_groupe:
-    path:    /dashboard/get/{idgroupe}.{_format}
+    path:    /dashboard/get/groupe.{_format}
     defaults: { _controller: "RoadBundle:Default:dashboard" }
     methods:  GET
 
