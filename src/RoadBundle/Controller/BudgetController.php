@@ -20,10 +20,8 @@ class BudgetController extends Controller
 {
     public function newBudgetAction(Request $request, $idgroupe)
     {
-        $em = $this->getDoctrine()->getManager();
         $budget = new Budget();
         $form = $this->createForm('RoadBundle\Form\BudgetType', $budget);
-        $form->handleRequest($request);
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $form->bind($jsonData);
 
@@ -65,10 +63,8 @@ class BudgetController extends Controller
     
     public function newuserBudgetAction(Request $request, $idmembre)
     {
-        $em = $this->getDoctrine()->getManager();
         $budget = new Budget();
         $form = $this->createForm('RoadBundle\Form\BudgetType', $budget);
-        $form->handleRequest($request);
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $form->bind($jsonData);
 

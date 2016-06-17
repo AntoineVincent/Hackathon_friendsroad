@@ -17,12 +17,10 @@ class GroupeController extends FOSRestController
 
     public function newgroupeAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         //$jsonObject = ' {"nom":"azert", "password":"azerty"} ';
         
         $groupe = new Groupe();
         $form = $this->createForm('RoadBundle\Form\GroupeType', $groupe);
-        $form->handleRequest($request);
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $form->bind($jsonData);
 

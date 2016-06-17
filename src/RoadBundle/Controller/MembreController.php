@@ -20,10 +20,8 @@ class MembreController extends Controller
 {
     public function newMembreAction(Request $request, $idgroupe)
     {
-        $em = $this->getDoctrine()->getManager();
         $membre = new Membre();
         $form = $this->createForm('RoadBundle\Form\MembreType', $membre);
-        $form->handleRequest($request);
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $form->bind($jsonData);
 
