@@ -94,12 +94,12 @@ function checkPassword() {
 
 
 
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute','ngMap'])
     .config(config)
     .directive('checkPassword', checkPassword)
+    .service('connectService', connectService)
+    .service('userService', userService)
     .controller('connectController', connectController)
     .controller('groupeController', groupeController)
     .controller('signupController', signupController)
-    .service('connectService', connectService)
-    .service('userService', userService)
     .run(run);
