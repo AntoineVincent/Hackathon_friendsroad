@@ -56,3 +56,8 @@ edit_membre:
     path:    /membre/edit/{idgroupe}.{_format}
     defaults: { _controller: "RoadBundle:Membre:editMembre" }
     methods:  PUT
+
+get_membre:
+    path:    /membre/get/{idgroupe}.{_format}
+    defaults: { _controller: "RoadBundle:Membre:getmembre" }
+    methods:  GET

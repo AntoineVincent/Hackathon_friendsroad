@@ -18,6 +18,15 @@ use FOS\RestBundle\View\View;
 
 class MembreController extends Controller
 {
+    public function getmembreAction($idgroupe)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $groupe = $em->getRepository('RoadBundle:Groupe')->findOneById($idgroupe);
+        $membres = $em->getRepository('RoadBundle:Membre')->findByIdgroupe($idgroupe);
+
+        return array ('membre' => $membre);
+    }
+
     public function newMembreAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
