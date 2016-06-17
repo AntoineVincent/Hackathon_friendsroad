@@ -10,6 +10,14 @@ function groupeController($scope, $location, $timeout, userService, $location, $
   $scope.proposition= {};
   $scope.groupe.itineraire = [];
   $scope.groupe.proposition = [];
+
+  function load (){
+    userService.get().then(function(res){
+      $scope.test = res.data;
+      console.log($scope.test);
+    })
+  }
+  load()
   //================== INIT PARALLAX ============
     angular.element($('.parallax')).parallax();
 
