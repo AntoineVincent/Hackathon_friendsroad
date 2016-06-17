@@ -22,26 +22,23 @@ class MembreController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $membre = new Membre();
-        $form = $this->createForm('RoadBundle\Form\MembreType', $membre);
-        $form->handleRequest($request);
+
+        $add = $em->getRepository('RoadBundle:Groupe')->findOneById($idgroupe);
+
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
-        $form->bind($jsonData);
+        $email = $jsonData['email'];
+        
+        $membre->setEmail($email);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-
-            $add = $em->getRepository('RoadBundle:Groupe')->findOneById($idgroupe);
-            $membre = $em->setIdgroupe($add->getId());
-            $membre = $em->setPassword($add->getPassword());
+        $membre->setIdgroupe($add->getId());
+        $membre->setPassword($add->getPassword());
             
-            $em->persist($membre);
-            $em->flush();
+        $em->persist($membre);
+        $em->flush();
 
-            return array('membre' => $membre);
-
-        }
-        return View::create($form, 400);
+        return array('membre' => $membre);
     }
+
     public function editMembreAction(Request $request, $idgroupe)
     {
         $em = $this->getDoctrine()->getManager();

@@ -17,7 +17,6 @@ class GroupeController extends FOSRestController
 
     public function newgroupeAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         //$jsonObject = ' {"nom":"azert", "password":"azerty"} ';
         
         $groupe = new Groupe();

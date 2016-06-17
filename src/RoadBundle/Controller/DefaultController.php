@@ -22,29 +22,29 @@ class DefaultController extends Controller
         return $this->render('RoadBundle:Default:index.html.twig');
     }
 
-    public function dashboardAction($idgroupe)
+    public function dashboardAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $groupe = $em->getRepository('RoadBundle:Groupe')->findOneByIdgroupe($idgroupe);
-        $membres = $em->getRepository('RoadBundle:Membre')->findByIdgroupe($idgroupe);
+        $groupe = $em->getRepository('RoadBundle:Groupe')->findAll();
+        //$membres = $em->getRepository('RoadBundle:Membre')->findByIdgroupe($idgroupe);
 
-        $result = [];
-        foreach ($membres as $membre)
-        {
-            $userbudget = $em->getRepository('RoadBundle:Budget')->findOneByIdmembre($membre->getId());
-            $resultuserbudget = array(
-                'essence' => $essence,
-                'bouffe' => $bouffe,
-                'trajet' => $trajet,
-                'sortie' => $sortie,
-                'total' => $total,
-            );
-        }
+        //$result = [];
+        //foreach ($membres as $membre)
+        //{
+        //    $userbudget = $em->getRepository('RoadBundle:Budget')->findOneByIdmembre($membre->getId());
+        //    $resultuserbudget = array(
+        //        'essence' => $essence,
+        //        'bouffe' => $bouffe,
+        //        'trajet' => $trajet,
+        //        'sortie' => $sortie,
+        //        'total' => $total,
+        //    );
+        //}
 
-        $budget = $em->getRepository('RoadBundle:Budget')->findOneByIdgroupe($idgroupe);
-        $itineraire = $em->getRepository('RoadBundle:Itineraire')->findOneByIdgroupe($idgroupe);
+        //$budget = $em->getRepository('RoadBundle:Budget')->findOneByIdgroupe($idgroupe);
+        //$itineraire = $em->getRepository('RoadBundle:Itineraire')->findOneByIdgroupe($idgroupe);
 
-        return array ($groupe, $membres, $resultuserbudget, $budget, $itineraire);
+        return array ('groupe' => $groupe);
     }
 
     public function deleteGroupeAction($idgroupe)

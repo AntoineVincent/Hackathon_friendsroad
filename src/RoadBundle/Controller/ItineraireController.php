@@ -19,10 +19,8 @@ class ItineraireController extends Controller
 {
     public function newItineraireAction(Request $request, $idgroupe)
     {
-        $em = $this->getDoctrine()->getManager();
         $itineraire = new Itineraire();
         $form = $this->createForm('RoadBundle\Form\ItineraireType', $itineraire);
-        $form->handleRequest($request);
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $form->bind($jsonData);
 
