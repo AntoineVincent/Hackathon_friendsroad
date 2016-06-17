@@ -5,7 +5,7 @@
 <div class="section white">
   <div class="row container">
 
-    <h2 class="header center-align">{{groupe.name}} {{test[0].nom}}</h2>
+    <h2 class="header center-align">{{groupeBack.groupe[0].nom}}</h2>
     <div class="row">
 
       <div class="col s6"> <!-- =================== COLLAPSE MEMBRES DU GROUPE =================== -->
@@ -32,9 +32,9 @@
                 </div>
 
                 <div class="row">
-                  <div class="chip margin" ng-repeat="user in groupe.users">
+                  <div class="chip margin" ng-repeat="user in membreBack.membres">
                     <img src="bundles/road/assets/moi.jpg" alt="Contact Person">
-                    {{user.name}}
+                    {{user.username}}
                   </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                </thead>
 
                <tbody>
-                 <tr ng-hide="groupe.proposition.length != 0 && groupe.itineraire.length != 0">
+                 <tr ng-hide="ok()">
                    <td>Aucune proposition</td>
                    <td></td>
                    <td></td>

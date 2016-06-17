@@ -24,7 +24,7 @@ class MembreController extends Controller
         $groupe = $em->getRepository('RoadBundle:Groupe')->findOneById($idgroupe);
         $membres = $em->getRepository('RoadBundle:Membre')->findByIdgroupe($idgroupe);
 
-        return array ('membre' => $membre);
+        return array ('membres' => $membres);
     }
 
     public function newMembreAction(Request $request, $idgroupe)
@@ -36,8 +36,10 @@ class MembreController extends Controller
 
         $jsonData = json_decode($request->getContent(), true); // "true" to get an associative array
         $email = $jsonData['email'];
+        $nom = $jsonData['nom'];
         
         $membre->setEmail($email);
+        $membre->setUsername($nom);
 
         $membre->setIdgroupe($add->getId());
         $membre->setPassword($add->getPassword());
