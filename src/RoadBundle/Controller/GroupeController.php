@@ -36,5 +36,23 @@ class GroupeController extends FOSRestController
 
         return View::create($form, 400);
     }
+    public function upgroupeAction(Request $request)
+    {
+        //$jsonObject = ' {"nom":"azert", "password":"azerty"} ';
+        
+        $groupe = new Groupe();
+        $groupe->setNom('Alestorm');
+        $groupe->setPassword('test');
+        $groupe->setUsername('Jeremy');
+        $groupe->setEmail('test@gmail.com');
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($groupe);
+        $em->flush();
+
+        return $this->render('default/test.html.twig', array(
+            'groupe' => $groupe,
+        ));
+    }
 }
 

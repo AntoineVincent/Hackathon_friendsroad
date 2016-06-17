@@ -61,3 +61,7 @@ get_membre:
     path:    /membre/get/{idgroupe}.{_format}
     defaults: { _controller: "RoadBundle:Membre:getmembre" }
     methods:  GET
+
+up_groupe:
+    path:    /groupe/create
+    defaults: { _controller: "RoadBundle:Groupe:upgroupe" }
