@@ -5,7 +5,7 @@
 <div class="section white">
   <div class="row container">
 
-    <h2 class="header center-align">{{groupe}}</h2>
+    <h2 class="header center-align">{{groupe.name}} {{test[0].nom}}</h2>
     <div class="row">
 
       <div class="col s6"> <!-- =================== COLLAPSE MEMBRES DU GROUPE =================== -->
@@ -16,9 +16,13 @@
                 <div class="row">
                   <form class="col s7">
                     <div class="row">
-                      <div class="input-field col s12">
-                        <input id="email" type="email" ng-model="users.email" class="validate">
+                      <div class="input-field col s6">
+                        <input id="email" type="email" ng-model="membre.email" class="validate">
                         <label for="email">Email</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="nom" type="text" ng-model="membre.name" class="validate">
+                        <label for="nom">Prénom Nom</label>
                       </div>
                     </div>
                   </form>
@@ -28,9 +32,9 @@
                 </div>
 
                 <div class="row">
-                  <div class="chip">
+                  <div class="chip margin" ng-repeat="user in groupe.users">
                     <img src="bundles/road/assets/moi.jpg" alt="Contact Person">
-                    Jerem
+                    {{user.name}}
                   </div>
                 </div>
             </div>
@@ -45,7 +49,7 @@
             <div class="collapsible-body padding">
                 <div class="row">
                   <div class="collection">
-                    <a class="collection-item">Alvin</a>
+                    <a class="collection-item">Alvin <span class="right">14 <i class="fa fa-eur" aria-hidden="true"></i></span></a>
                     <a class="collection-item">Alvin</a>
                     <a class="collection-item">Alvin</a>
                     <a class="collection-item active">Alvin</a>
@@ -62,13 +66,34 @@
               <li>
                 <div class="collapsible-header active"><i class="fa fa-map-marker" aria-hidden="true"></i>Itinéraire</div>
                 <div class="collapsible-body padding">
+
+                  <div class="row">
+                    <form class="col s7">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="Itineraire" type="text" ng-model="itineraire.proposition" class="validate">
+                          <label for="proposition">Itineraire</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="prix" type="number" ng-model="itineraire.prix" class="validate">
+                          <label for="email">Prix</label>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="col s4 offset-s1 addButton">
+                      <a class="waves-effect waves-light col s12 btn" ng-click="addItineraire()"><i class="medium material-icons right">add</i>Ajouter </a>
+                    </div>
+                  </div>
+
                     <div class="row">
                       <div class="col s6">
                         <div class="collection">
-                          <a id="geo0" class="collection-item" ng-click="geoloc('Sydney','geo0')">Sydney</a>
-                          <a id="geo1" class="collection-item" ng-click="geoloc('Melbourne','geo1')">Melbourne</a>
-                          <a id="geo2" class="collection-item" ng-click="geoloc('Perth','geo2')">Perth</a>
-                          <a id="geo3" class="collection-item" ng-click="geoloc('Adelaîde','geo3')">Adelaîde</a>
+                          <div ng-hide="groupe.itineraire.length != 0">
+                            <a class="collection-item" >Aucune proposition </a>
+                          </div>
+                          <div ng-repeat="iti in groupe.itineraire">
+                            <a id="geo{{$index}}" class="collection-item" ng-click="geoloc(iti.proposition,'geo'+$index)">{{iti.proposition}} <span class="right">{{iti.prix}} <i class="fa fa-eur" aria-hidden="true"></i></span></a>
+                          </div>
                         </div>
                       </div>
                       <div class="col s6">
@@ -90,6 +115,24 @@
           <li>
             <div class="collapsible-header active"><i class="fa fa-comment" aria-hidden="true"></i>Propositions</div>
             <div class="collapsible-body padding">
+              <div class="row">
+                <form class="col s7">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="proposition" type="text" ng-model="proposition.proposition" class="validate">
+                      <label for="proposition">Proposition</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="prix" type="number" ng-model="proposition.prix" class="validate">
+                      <label for="email">Prix</label>
+                    </div>
+                  </div>
+                </form>
+                <div class="col s4 offset-s1 addButton">
+                  <a class="waves-effect waves-light col s12 btn" ng-click="addProposition()"><i class="medium material-icons right">add</i>Ajouter </a>
+                </div>
+              </div>
+
               <table class="striped centered">
                <thead>
                  <tr>
@@ -101,23 +144,23 @@
                </thead>
 
                <tbody>
-                 <tr>
-                   <td>Alvin</td>
-                   <td>50 <i class="fa fa-eur" aria-hidden="true"></i></td>
-                   <td>2</td>
+                 <tr ng-hide="groupe.proposition.length != 0 && groupe.itineraire.length != 0">
+                   <td>Aucune proposition</td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                 </tr>
+                 <tr ng-repeat="prop in groupe.proposition">
+                   <td>{{prop.proposition}}</td>
+                   <td>{{prop.prix}} <i class="fa fa-eur" aria-hidden="true"></i></td>
+                   <td>0</td>
                    <td><i class="small material-icons close">close</i></td>
                  </tr>
-                 <tr>
-                   <td>Alan</td>
-                   <td>75 <i class="fa fa-eur" aria-hidden="true"></i></td>
-                   <td>4</td>
-                   <td><i class="small material-icons done">done</i></td>
-                 </tr>
-                 <tr>
-                   <td>Jonathan</td>
-                   <td>33 <i class="fa fa-eur" aria-hidden="true"></i></td>
-                   <td>3</td>
-                   <td><i class="small material-icons done">done</i></td>
+                 <tr ng-repeat="iti in groupe.itineraire">
+                   <td>{{iti.proposition}}</td>
+                   <td>{{iti.prix}} <i class="fa fa-eur" aria-hidden="true"></i></td>
+                   <td>0</td>
+                   <td><i class="small material-icons close">close</i></td>
                  </tr>
                </tbody>
              </table>

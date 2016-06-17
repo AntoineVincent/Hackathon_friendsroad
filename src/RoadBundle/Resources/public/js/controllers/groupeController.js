@@ -1,9 +1,23 @@
 function groupeController($scope, $location, $timeout, userService, $location, $http, $rootScope) {
   $('body').css({'background':'url("../assets/parallax1.jpg") cover'})
   $rootScope.connect = true;
+  $scope.groupe = JSON.parse(sessionStorage.getItem('groupe'));
+  console.log($scope.groupe);
+  $scope.membre = {};
   var tabActive = [' '];
   $scope.users = {};
-  $scope.groupe = 'Nom du Groupe';
+  $scope.itineraire= {};
+  $scope.proposition= {};
+  $scope.groupe.itineraire = [];
+  $scope.groupe.proposition = [];
+
+  function load (){
+    userService.get().then(function(res){
+      $scope.test = res.data;
+      console.log($scope.test);
+    })
+  }
+  load()
   //================== INIT PARALLAX ============
     angular.element($('.parallax')).parallax();
 
@@ -15,7 +29,22 @@ function groupeController($scope, $location, $timeout, userService, $location, $
   });
   $scope.addEmail = function () {
     console.log($scope.users);
-    userService.create($scope.users);
+    $scope.groupe.users.push($scope.membre);
+    console.log($scope.groupe);
+    sessionStorage.setItem('groupe',JSON.stringify($scope.groupe));
+    $scope.membre = {};
+  }
+  $scope.addItineraire = function () {
+    $scope.groupe.itineraire.push($scope.itineraire);
+    console.log($scope.groupe);
+    sessionStorage.setItem('groupe',JSON.stringify($scope.groupe));
+    $scope.itineraire = {};
+  }
+  $scope.addProposition = function () {
+    $scope.groupe.proposition.push($scope.proposition);
+    console.log($scope.groupe);
+    sessionStorage.setItem('groupe',JSON.stringify($scope.groupe));
+    $scope.proposition = {};
   }
   //=============== GEOLOCALISATION ============
   $scope.geoloc = function (elem, id){
