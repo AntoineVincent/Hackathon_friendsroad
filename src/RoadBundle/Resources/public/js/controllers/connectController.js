@@ -1,6 +1,7 @@
 function connectController($scope, $rootScope, $location, connectService){
 	$('body').css({'background':'url("../assets/bg-accueil.jpg") cover'});
 	$rootScope.connect = false;
+	sessionStorage.setItem('groupe','');
 	$scope.connect = function (){
 		console.log('kkklklkl');
 	}
