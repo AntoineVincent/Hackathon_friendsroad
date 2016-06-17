@@ -22,7 +22,7 @@ class DefaultController extends Controller
         return $this->render('RoadBundle:Default:index.html.twig');
     }
 
-    public function dashboardAction(Request $request, $idgroupe)
+    public function dashboardAction($idgroupe)
     {
         $em = $this->getDoctrine()->getManager();
         $groupe = $em->getRepository('RoadBundle:Groupe')->findOneByIdgroupe($idgroupe);
