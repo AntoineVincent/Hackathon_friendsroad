@@ -5,7 +5,7 @@
 <div class="section white">
   <div class="row container">
 
-    <h2 class="header">{{groupe}}</h2>
+    <h2 class="header center-align">{{groupe}}</h2>
     <div class="row">
 
       <div class="col s6"> <!-- =================== COLLAPSE MEMBRES DU GROUPE =================== -->
@@ -17,13 +17,13 @@
                   <form class="col s7">
                     <div class="row">
                       <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" ng-model="users.email" class="validate">
                         <label for="email">Email</label>
                       </div>
                     </div>
                   </form>
                   <div class="col s4 offset-s1 addButton">
-                    <a class="waves-effect waves-light col s12 btn"><i class="medium material-icons right">add</i>Ajouter </a>
+                    <a class="waves-effect waves-light col s12 btn" ng-click="addEmail()"><i class="medium material-icons right">add</i>Ajouter </a>
                   </div>
                 </div>
 
@@ -41,7 +41,7 @@
       <div class="col s6"> <!-- =================== COLLAPSE BUDGET =================== -->
         <ul class="collapsible" data-collapsible="accordion">
           <li>
-            <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Budget</div>
+            <div class="collapsible-header active"><i class="fa fa-money" aria-hidden="true"></i>Budget</div>
             <div class="collapsible-body padding">
                 <div class="row">
                   <div class="collection">
@@ -60,20 +60,21 @@
 
             <ul class="collapsible" data-collapsible="accordion">
               <li>
-                <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Itinéraire</div>
+                <div class="collapsible-header active"><i class="fa fa-map-marker" aria-hidden="true"></i>Itinéraire</div>
                 <div class="collapsible-body padding">
                     <div class="row">
                       <div class="col s6">
                         <div class="collection">
-                          <a class="collection-item">Alvin</a>
-                          <a class="collection-item">Alvin</a>
-                          <a class="collection-item">Alvin</a>
-                          <a class="collection-item active">Alvin</a>
+                          <a id="geo0" class="collection-item" ng-click="geoloc('Sydney','geo0')">Sydney</a>
+                          <a id="geo1" class="collection-item" ng-click="geoloc('Melbourne','geo1')">Melbourne</a>
+                          <a id="geo2" class="collection-item" ng-click="geoloc('Perth','geo2')">Perth</a>
+                          <a id="geo3" class="collection-item" ng-click="geoloc('Adelaîde','geo3')">Adelaîde</a>
                         </div>
                       </div>
                       <div class="col s6">
-                        <ng-map default-style="false" center="{{centerMap}}" zoom="8">
-                          <marker position="{{deal.shop.point.coordinates}}" id="{{deal.shop.name}}" title="{{deal.shop.name}}" on-click="showDetail('marker-info')"></marker>
+                        <ng-map zoom="11" center="{{position}}" scrollwheel="false">
+                          <marker ng-repeat="p in position"
+                                  position="{{position}}" title="pos: {{position}}"></marker>
                         </ng-map>
                       </div>
 
@@ -87,7 +88,7 @@
       <div class="col s12"> <!-- =================== COLLAPSE PROPOSITIONS =================== -->
         <ul class="collapsible" data-collapsible="accordion">
           <li>
-            <div class="collapsible-header active"><i class="fa fa-users" aria-hidden="true"></i>Propositions</div>
+            <div class="collapsible-header active"><i class="fa fa-comment" aria-hidden="true"></i>Propositions</div>
             <div class="collapsible-body padding">
               <table class="striped centered">
                <thead>
