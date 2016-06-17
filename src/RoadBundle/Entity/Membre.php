@@ -3,7 +3,6 @@
 namespace RoadBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Membre
@@ -11,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="membre")
  * @ORM\Entity(repositoryClass="RoadBundle\Repository\MembreRepository")
  */
-class Membre implements UserInterface
+class Membre
 {
     /**
      * @var int
@@ -49,16 +48,6 @@ class Membre implements UserInterface
      * @ORM\Column(name="idgroupe", type="integer", nullable=true)
      */
     private $idgroupe;
-
-    /**
-     * @ORM\Column(name="salt", type="string", length=255)
-     */
-    private $salt;
-
-    /**
-     * @ORM\Column(name="roles", type="string")
-     */
-    private $roles = string;
 
     /**
      * Get id
@@ -162,53 +151,4 @@ class Membre implements UserInterface
         return $this->idgroupe;
     }
 
-    /**
-     * Set salt
-     *
-     * @param string $salt
-     * @return Membre
-     */
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
-
-        return $this;
-    }
-
-    /**
-     * Get salt
-     *
-     * @return string
-     */
-    public function getSalt()
-    {
-        return $this->salt;
-    }
-
-    /**
-     * Set roles
-     *
-     * @param string $roles
-     * @return Membre
-     */
-    public function setRoles($roles)
-    {
-        $this->roles = $roles;
-
-        return $this;
-    }
-
-    /**
-     * Get roles
-     *
-     * @return string
-     */
-    public function getRoles()
-    {
-        return $this->roles;
-    }
-
-    public function eraseCredentials()
-    {
-    }
 }
